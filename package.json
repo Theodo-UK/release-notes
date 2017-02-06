@@ -1,0 +1,11 @@
+{
+  "name": "release-notes",
+  "version": "0.0.1",
+  "description": "Auto-generate release notes",
+  "main": "index.js",
+  "author": "Nathan Gaberel <nathang@theodo.co.uk>",
+  "license": "MIT",
+  "dependencies": {
+    "github": "^8.1.1"
+  }
+}
