@@ -1,6 +1,6 @@
 const GitHub = require('github');
 
-const token = 'cb0ee61d52fdd8f0856ed4e2a537cb9e9306ab79';
+const token = process.env.GITHUB_TOKEN
 
 const github = new GitHub();
 
