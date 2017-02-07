@@ -13,7 +13,13 @@ class App extends React.PureComponent {
       <Nav/>
       { this.props.showMail && <Mail/> }
       <footer>
-        <a href={ pkg.homepage } title={`${pkg.name} on GitHub`}>{ pkg.name } v{ pkg.version }</a>
+        <a
+          href={ pkg.homepage }
+          target="blank"
+          title={`${pkg.name} on GitHub`}
+        >
+          { pkg.name } v{ pkg.version }
+        </a>
       </footer>
     </main>;
   }
