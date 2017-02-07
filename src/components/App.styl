@@ -1,8 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Karla');
+@import url('https://fonts.googleapis.com/css?family=Karla:400,700');
 
 scale = 10px
 
 blue = #3498db
+gray = #95a5a6
+
+shadow()
+  box-shadow: 0 0 scale alpha(black, 0.2)
 
 body
   background: #ecf0f1
@@ -17,7 +21,7 @@ a
   &:hover
     text-decoration: underline
 
-main
+.release-notes
   margin: auto
   width: 80%
 
@@ -41,6 +45,7 @@ nav
     padding: 0
 
     li
+      shadow()
       align-items: center
       background: blue
       display: flex
@@ -69,12 +74,31 @@ nav
         top: 0
 
 article
+  shadow()
   background: white
-  box-shadow: 0 0 scale alpha(black, 0.2)
   padding: scale
 
+  header
+    border-bottom: 1px dotted gray
+    margin-bottom: scale
+    padding-bottom: scale
+
+    dl
+      display: flex
+      flex-flow: row wrap
+      margin: 0
+
+      dt
+        font-weight: bolder
+        flex-grow: 0
+        width: 5%
+
+      dd
+        flex-grow: 1
+        width: 90%
+
 footer
-  color: #95a5a6
+  color: gray
   margin: scale 0
   text-align: center
 

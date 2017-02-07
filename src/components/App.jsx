@@ -9,7 +9,7 @@ import './App.styl';
 
 class App extends React.PureComponent {
   render() {
-    return <main>
+    return <main className="release-notes">
       <Nav/>
       { this.props.showMail && <Mail/> }
       <footer>
