@@ -1,11 +1,69 @@
 {
   "name": "release-notes",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Auto-generate release notes",
-  "main": "index.js",
   "author": "Nathan Gaberel <nathang@theodo.co.uk>",
   "license": "MIT",
+  "scripts": {
+    "build": "webpack --config webpack.prod.config.js",
+    "dev": "webpack-dashboard -- webpack-dev-server",
+    "pretest": "eslint src test --ext js,jsx"
+  },
   "dependencies": {
-    "github": "^8.1.1"
+    "firebase": "^3.6.6",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.2",
+    "redux": "^3.6.0",
+    "redux-saga": "^0.14.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-polyfill": "^6.22.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-1": "^6.16.0",
+    "eslint": "^3.13.1",
+    "eslint-plugin-react": "^6.9.0",
+    "react-hot-loader": "^1.3.1",
+    "webpack": "^2.2.1",
+    "webpack-dashboard": "^0.3.0",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-1",
+      "react"
+    ]
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended"
+    ],
+    "globals": {
+      "Promise": true
+    },
+    "parserOptions": {
+      "ecmaFeatures": {
+        "experimentalObjectRestSpread": true,
+        "jsx": true
+      },
+      "ecmaVersion": 6,
+      "sourceType": "module"
+    },
+    "plugins": [
+      "react"
+    ]
+  },
+  "repository": {
+    "url": "git@github.com:Theodo-UK/release-notes.git",
+    "type": "git"
   }
 }
