@@ -40,7 +40,7 @@ class Nav extends React.PureComponent {
       <ol>
         <li>
           <button onClick={login} disabled={loggedIn}>
-            login with firebase
+            Login to GitHub
           </button>
         </li>
         <li>
