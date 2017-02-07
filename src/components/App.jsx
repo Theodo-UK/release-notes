@@ -61,11 +61,11 @@ class App extends React.PureComponent {
           </select>
         </li>
       </ol>
-      <ol>
+      <ul>
         { commits.map(commit =>
           <li key={commit.sha}>{commit.message}</li>
         )}
-      </ol>
+      </ul>
     </div>;
   }
 }
