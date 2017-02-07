@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import pkg from '../../package.json';
 import Mail from './Mail';
@@ -10,7 +11,7 @@ class App extends React.PureComponent {
   render() {
     return <main>
       <Nav/>
-      <Mail/>
+      { this.props.showMail && <Mail/> }
       <footer>
         <a href={ pkg.homepage } title={`${pkg.name} on GitHub`}>{ pkg.name } v{ pkg.version }</a>
       </footer>
@@ -18,6 +19,18 @@ class App extends React.PureComponent {
   }
 }
 
-App.propTypes = {};
+App.propTypes = {
+  showMail: React.PropTypes.bool.isRequired,
+};
 
-export default App;
+const mapStateToProps = state => ({
+  showMail: !!state.pulls.selected,
+});
+const mapDispatchToProps = {};
+
+const AppContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);
+
+export default AppContainer;
