@@ -3,6 +3,7 @@
   "version": "0.0.2",
   "description": "Auto-generate release notes",
   "author": "Nathan Gaberel <nathang@theodo.co.uk>",
+  "homepage": "https://github.com/Theodo-UK/release-notes",
   "license": "MIT",
   "scripts": {
     "build": "webpack --config webpack.prod.config.js",
@@ -10,12 +11,16 @@
     "pretest": "eslint src test --ext js,jsx"
   },
   "dependencies": {
+    "css-loader": "^0.26.1",
     "firebase": "^3.6.6",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.2",
     "redux": "^3.6.0",
-    "redux-saga": "^0.14.3"
+    "redux-saga": "^0.14.3",
+    "style-loader": "^0.13.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^2.4.0"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",

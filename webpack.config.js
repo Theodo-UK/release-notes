@@ -15,6 +15,13 @@ module.exports = Object.assign({}, baseConfig, {
         use: [
           'react-hot-loader', 'babel-loader'
         ]
+      },
+      {
+        test: /\.styl?$/,
+        exclude: /node_modules/,
+        use: [
+          'style-loader', 'css-loader', 'stylus-loader'
+        ]
       }
     ]
   },

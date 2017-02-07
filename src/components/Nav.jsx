@@ -55,11 +55,12 @@ class Nav extends React.PureComponent {
           <select onChange={this.onPRChange}>
             <option disabled>Select a PR</option>
             { pullRequests.map(pr =>
-              <option value={pr.number} key={pr.number}>[{pr.number}] {pr.title}</option>
+              <option value={pr.number} key={pr.number}>[{pr.number}] {pr.title.substring(0, 50)}</option>
             )}
           </select>
         </li>
       </ol>
+      <h1>release notes</h1>
     </nav>;
   }
 }
