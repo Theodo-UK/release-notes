@@ -2,12 +2,10 @@
 
 Automatically generate the release notes for your project.
 
-## Installation
+## How to
 
-- `yarn`
-
-## Development
-
-- `yarn dev`
+- install: `yarn`
+- develop: `yarn dev`
+- deploy: `./deploy.sh`
 
 ## Enjoy =)
