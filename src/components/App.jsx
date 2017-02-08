@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import pkg from '../../package.json';
+import Help from './Help';
 import Mail from './Mail';
 import Nav from './Nav';
 
@@ -12,6 +13,7 @@ class App extends React.PureComponent {
     return <main className="release-notes">
       <Nav/>
       { this.props.showMail && <Mail/> }
+      <Help/>
       <footer>
         <a
           href={ pkg.homepage }
