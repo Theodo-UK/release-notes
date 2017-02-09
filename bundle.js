@@ -31188,7 +31188,8 @@ var Mail = function (_React$PureComponent) {
     value: function render() {
       var _props = this.props,
           commits = _props.commits,
-          repo = _props.repo;
+          repo = _props.repo,
+          user = _props.user;
 
 
       var now = (0, _moment2.default)();
@@ -31232,7 +31233,7 @@ var Mail = function (_React$PureComponent) {
               'dd',
               null,
               'Deployment ',
-              now.format('L'),
+              now.format('DD/MM/YYYY'),
               ' - Release notes'
             )
           )
@@ -31276,7 +31277,7 @@ var Mail = function (_React$PureComponent) {
           _react2.default.createElement(
             'p',
             null,
-            'Nathan'
+            user
           )
         )
       );
@@ -31288,13 +31289,15 @@ var Mail = function (_React$PureComponent) {
 
 Mail.propTypes = {
   commits: _react2.default.PropTypes.array.isRequired,
-  repo: _react2.default.PropTypes.object.isRequired
+  repo: _react2.default.PropTypes.object.isRequired,
+  user: _react2.default.PropTypes.string.isRequired
 };
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
     commits: state.commits.commits,
-    repo: state.repos.selected
+    repo: state.repos.selected,
+    user: state.user.name
   };
 };
 var mapDispatchToProps = {};
@@ -31988,7 +31991,7 @@ function loadCommits() {
           _context.next = 15;
           return (0, _effects.put)((0, _commits.loadCommitsSuccess)(commits.map(function (commit) {
             return {
-              message: commit.commit.message,
+              message: commit.commit.message.split('\n')[0],
               sha: commit.sha
             };
           })));
@@ -51469,7 +51472,7 @@ function symbolObservablePonyfill(root) {
 
 module.exports = {
 	"name": "release-notes",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"description": "Auto-generate release notes",
 	"author": "Nathan Gaberel <nathang@theodo.co.uk>",
 	"homepage": "https://github.com/Theodo-UK/release-notes",
