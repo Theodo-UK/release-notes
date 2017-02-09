@@ -31379,6 +31379,7 @@ var Nav = function (_React$PureComponent) {
           login = _props.login,
           loggedIn = _props.loggedIn,
           pullRequests = _props.pullRequests,
+          selectedPR = _props.selectedPR,
           selectedRepo = _props.selectedRepo,
           repositories = _props.repositories;
 
@@ -31425,7 +31426,7 @@ var Nav = function (_React$PureComponent) {
             null,
             _react2.default.createElement(
               'select',
-              { onChange: this.onPRChange },
+              { onChange: this.onPRChange, value: selectedPR ? selectedPR.id : '' },
               _react2.default.createElement(
                 'option',
                 { disabled: true },
@@ -31462,6 +31463,7 @@ Nav.propTypes = {
   pullRequests: _react2.default.PropTypes.array.isRequired,
   selectPR: _react2.default.PropTypes.func.isRequired,
   selectRepo: _react2.default.PropTypes.func.isRequired,
+  selectedPR: _react2.default.PropTypes.object,
   selectedRepo: _react2.default.PropTypes.object,
   repositories: _react2.default.PropTypes.array.isRequired
 };
@@ -31471,6 +31473,7 @@ var mapStateToProps = function mapStateToProps(state) {
     loggedIn: state.user.loggedIn,
     pullRequests: state.pulls.pullRequests,
     repositories: state.repos.repositories,
+    selectedPR: state.pulls.selected,
     selectedRepo: state.repos.selected
   };
 };
@@ -51472,7 +51475,7 @@ function symbolObservablePonyfill(root) {
 
 module.exports = {
 	"name": "release-notes",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"description": "Auto-generate release notes",
 	"author": "Nathan Gaberel <nathang@theodo.co.uk>",
 	"homepage": "https://github.com/Theodo-UK/release-notes",
