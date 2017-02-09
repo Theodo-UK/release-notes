@@ -32,6 +32,7 @@ class Nav extends React.PureComponent {
       login,
       loggedIn,
       pullRequests,
+      selectedPR,
       selectedRepo,
       repositories,
     } = this.props;
@@ -52,7 +53,7 @@ class Nav extends React.PureComponent {
           </select>
         </li>
         <li>
-          <select onChange={this.onPRChange}>
+          <select onChange={this.onPRChange} value={selectedPR ? selectedPR.id : ''}>
             <option disabled>Select a PR</option>
             { pullRequests.map(pr =>
               <option value={pr.number} key={pr.number}>[{pr.number}] {pr.title.substring(0, 50)}</option>
@@ -71,6 +72,7 @@ Nav.propTypes = {
   pullRequests: React.PropTypes.array.isRequired,
   selectPR: React.PropTypes.func.isRequired,
   selectRepo: React.PropTypes.func.isRequired,
+  selectedPR: React.PropTypes.object,
   selectedRepo: React.PropTypes.object,
   repositories: React.PropTypes.array.isRequired,
 };
@@ -79,6 +81,7 @@ const mapStateToProps = state => ({
   loggedIn: state.user.loggedIn,
   pullRequests: state.pulls.pullRequests,
   repositories: state.repos.repositories,
+  selectedPR: state.pulls.selected,
   selectedRepo: state.repos.selected,
 });
 const mapDispatchToProps = {
