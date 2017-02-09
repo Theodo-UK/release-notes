@@ -7,6 +7,7 @@ class Mail extends React.PureComponent {
     const {
       commits,
       repo,
+      user,
     } = this.props;
 
     const now = moment();
@@ -37,7 +38,7 @@ class Mail extends React.PureComponent {
 
         <p>Thanks,</p>
 
-        <p>Nathan</p>
+        <p>{ user }</p>
       </main>
     </article>;
   }
@@ -46,11 +47,13 @@ class Mail extends React.PureComponent {
 Mail.propTypes = {
   commits: React.PropTypes.array.isRequired,
   repo: React.PropTypes.object.isRequired,
+  user: React.PropTypes.string.isRequired,
 };
 
 const mapStateToProps = state => ({
   commits: state.commits.commits,
   repo: state.repos.selected,
+  user: state.user.name,
 });
 const mapDispatchToProps = {};
 
