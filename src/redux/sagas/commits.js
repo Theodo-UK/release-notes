@@ -14,7 +14,7 @@ function* loadCommits() {
 
     const commits = yield call(github.getCommits, token, repo.owner, repo.name, pr.number);
     yield put(loadCommitsSuccess(commits.map(commit => ({
-      message: commit.commit.message,
+      message: commit.commit.message.split('\n')[0],
       sha: commit.sha,
     }))));
   }
