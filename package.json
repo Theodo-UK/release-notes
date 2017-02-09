@@ -1,6 +1,6 @@
 {
   "name": "release-notes",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Auto-generate release notes",
   "author": "Nathan Gaberel <nathang@theodo.co.uk>",
   "homepage": "https://github.com/Theodo-UK/release-notes",
