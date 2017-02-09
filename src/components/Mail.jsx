@@ -20,7 +20,7 @@ class Mail extends React.PureComponent {
           <dt>From</dt>
           <dd>team@theodo</dd>
           <dt>Subject</dt>
-          <dd>Deployment { now.format('L') } - Release notes</dd>
+          <dd>Deployment { now.format('DD/MM/YYYY') } - Release notes</dd>
         </dl>
       </header>
       <main>
