@@ -54,7 +54,8 @@
       "plugin:react/recommended"
     ],
     "globals": {
-      "Promise": true
+      "Promise": true,
+      "Trello": true
     },
     "parserOptions": {
       "ecmaFeatures": {
