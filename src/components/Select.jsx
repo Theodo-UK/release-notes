@@ -7,12 +7,13 @@ class Select extends React.PureComponent {
     const {
       children,
       disabled,
+      loading,
       onChange,
       placeholder,
       value,
     } = this.props;
 
-    const classes = `custom-select ${disabled ? 'disabled' : ''}`;
+    const classes = `custom-select ${disabled ? 'disabled' : ''} ${loading ? 'loading' : ''}`;
 
     return <div className={classes}>
       <select
@@ -30,6 +31,7 @@ class Select extends React.PureComponent {
 Select.propTypes = {
   children: React.PropTypes.node.isRequired,
   disabled: React.PropTypes.bool.isRequired,
+  loading: React.PropTypes.bool.isRequired,
   onChange: React.PropTypes.func,
   placeholder: React.PropTypes.string.isRequired,
   value: React.PropTypes.string,
@@ -37,6 +39,7 @@ Select.propTypes = {
 
 Select.defaultProps = {
   disabled: false,
+  loading: false,
   placeholder: 'Select a value',
 };
 

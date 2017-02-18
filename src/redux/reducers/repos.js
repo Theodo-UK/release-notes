@@ -9,7 +9,6 @@ const initialState = {
 export default function repos(state=initialState, action) {
   switch(action.type) {
     case types.LOAD_REPOSITORIES.REQUEST:
-    case types.LOAD_REPOSITORIES.FAILURE:
       return {
         ...state,
         loading: true
@@ -17,7 +16,13 @@ export default function repos(state=initialState, action) {
     case types.LOAD_REPOSITORIES.SUCCESS:
       return {
         ...state,
+        loading: false,
         repositories: action.repos,
+      };
+    case types.LOAD_REPOSITORIES.FAILURE:
+      return {
+        ...state,
+        loading: false,
       };
     case types.SELECT_REPO:
       return {

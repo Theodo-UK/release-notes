@@ -33,6 +33,8 @@ class Nav extends React.PureComponent {
 
   render() {
     const {
+      loadingPullRequests,
+      loadingRepos,
       login,
       loggedIn,
       pullRequests,
@@ -50,6 +52,8 @@ class Nav extends React.PureComponent {
         </li>
         <li>
           <Select
+            disabled={repositories.length == 0}
+            loading={loadingRepos}
             onChange={this.onRepoChange}
             placeholder="Select a repo"
             value={selectedRepo ? selectedRepo.id : ''}
@@ -61,12 +65,14 @@ class Nav extends React.PureComponent {
         </li>
         <li>
           <Select
+            disabled={pullRequests.length == 0}
+            loading={loadingPullRequests}
             onChange={this.onPRChange}
             placeholder="Select a PR"
             value={selectedPR ? selectedPR.id : ''}
           >
             { pullRequests.map(pr =>
-              <option value={pr.number} key={pr.number}>[{pr.number}] {pr.title.substring(0, 50)}</option>
+              <option value={pr.number} key={pr.number}>[{pr.number}] {pr.title}</option>
             )}
           </Select>
         </li>
@@ -76,6 +82,8 @@ class Nav extends React.PureComponent {
 }
 
 Nav.propTypes = {
+  loadingPullRequests: React.PropTypes.bool.isRequired,
+  loadingRepos: React.PropTypes.bool.isRequired,
   loggedIn: React.PropTypes.bool.isRequired,
   login: React.PropTypes.func.isRequired,
   pullRequests: React.PropTypes.array.isRequired,
@@ -87,6 +95,8 @@ Nav.propTypes = {
 };
 
 const mapStateToProps = state => ({
+  loadingPullRequests: state.pulls.loading,
+  loadingRepos: state.repos.loading,
   loggedIn: state.user.loggedIn,
   pullRequests: state.pulls.pullRequests,
   repositories: state.repos.repositories,
