@@ -18,9 +18,14 @@ module.exports = Object.assign({}, baseConfig, {
       },
       {
         test: /\.styl?$/,
-        exclude: /node_modules/,
         use: [
           'style-loader', 'css-loader', 'stylus-loader'
+        ]
+      },
+      {
+        test: /\.svg?$/,
+        use: [
+          'url-loader', 'img-loader'
         ]
       }
     ]
