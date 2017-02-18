@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon /Arrow-down</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Icon-/Arrow-down" stroke="#FFFFFF" fill="#FFFFFF">
+            <path d="M8,12 C7.78125,12 7.57210634,11.9113356 7.41785602,11.753367 L1.24125627,5.43686869 C0.919581242,5.10830527 0.919581242,4.57547699 1.24125627,4.246633 C1.5629313,3.917789 2.0838692,3.917789 2.40554423,4.246633 L8,9.96801347 L13.5944558,4.246633 C13.9161308,3.917789 14.4370687,3.917789 14.7587437,4.246633 C15.0804188,4.57547699 15.0804188,5.10830527 14.7587437,5.43686869 L8.58214398,11.753367 C8.42789366,11.9113356 8.21875,12 8,12 Z" id="Arrow-down"></path>
+        </g>
+    </g>
+</svg>

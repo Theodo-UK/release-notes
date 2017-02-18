@@ -1,15 +1,14 @@
 @import './vars.styl';
 
 article
-  shadow()
   background: white
-  margin: 2*scale 0
-  padding: scale
+  border-radius: (grid/4)
+  padding: 4*grid
 
   header
-    border-bottom: 1px dotted gray
-    margin-bottom: scale
-    padding-bottom: scale
+    border-bottom: 2px solid background
+    margin-bottom: 3*grid
+    padding-bottom: 3*grid
 
     dl
       display: flex
@@ -17,10 +16,20 @@ article
       margin: 0
 
       dt
-        font-weight: bolder
         flex-grow: 0
-        width: 5%
+        font-weight: bolder
+        width: 80px
 
       dd
         flex-grow: 1
-        width: 90%
+        margin: 0
+        width: calc(100% - 80px)
+
+  p
+    margin: 0 0 1.5*grid
+
+    &:last-child
+      margin-bottom: 0
+
+  ul, ol
+    margin: 1.5*grid 0

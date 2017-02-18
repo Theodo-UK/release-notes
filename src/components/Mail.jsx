@@ -25,23 +25,22 @@ class Mail extends React.PureComponent {
           <dd>Deployment { now.format('DD/MM/YYYY') } - Release notes</dd>
         </dl>
       </header>
-      <main>
-        <p>Hello team { repo.name },</p>
 
-        <p>We are about to deploy the following features to production:</p>
+      <p>Hello team { repo.name },</p>
 
-        <ul>
-          { commits.map(commit =>
-            <li key={commit.sha}>{commit.message}</li>
-          )}
-        </ul>
+      <p>We are about to deploy the following features to production:</p>
 
-        <p>Let me know if this looks right to you, otherwise we'll deploy in a few minutes!</p>
+      <ul>
+        { commits.map(commit =>
+          <li key={commit.sha}>{commit.message}</li>
+        )}
+      </ul>
 
-        <p>Thanks,</p>
+      <p>Let me know if this looks right to you, otherwise we'll deploy in a few minutes!</p>
 
-        <p>{ user }</p>
-      </main>
+      <p>Thanks,</p>
+
+      <p>{ user }</p>
     </article>;
   }
 }

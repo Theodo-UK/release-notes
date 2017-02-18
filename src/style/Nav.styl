@@ -1,50 +1,33 @@
 @import './vars.styl';
 
 nav
-  align-items: center
-  display: flex
-  flex-flow: row nowrap
-  justify-content: space-between
-  margin: 2*scale 0
-
-  h1
-    margin: 0
-    opacity: 0.3
+  margin: 3*grid 0
 
   ol
-    align-items: center
+    align-items: stretch
+    counter-reset: step
     display: flex
-    flex-flow: row nowrap
+    flex-flow: column nowrap
     justify-content: flex-start
     list-style: none
     margin: 0
     padding: 0
 
     li
-      shadow()
       align-items: center
-      background: blue
+      counter-increment: step
       display: flex
       flex-flow: row nowrap
-      height: 40px
-      margin: 0 10px
-      padding: 0 scale
+      margin: 3*grid 0 2*grid
+      padding: 0
       position: relative
 
       &::before
-        border-color: blue transparent blue transparent
-        border-style: solid
-        border-width: 20px 0 20px 10px
-        content: ''
+        content: 'step ' counter(step)
+        color: gray
+        font-size: 12px
+        font-weight: bolder
+        height: 2*grid
         position: absolute
-        right: 100%
-        top: 0
-
-      &::after
-        border-color: transparent transparent transparent blue
-        border-style: solid
-        border-width: 20px 0 20px 10px
-        content: ''
-        left: 100%
-        position: absolute
-        top: 0
+        text-transform: uppercase
+        top: -3*grid

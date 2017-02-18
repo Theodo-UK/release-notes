@@ -1,8 +1,15 @@
 @import './vars.styl';
 
+html
+  height: 100%
+
 body
-  background: #ecf0f1
-  font-family: 'Karla', sans-serif
+  background: background
+  color: text
+  font-family: 'Source Sans Pro', sans-serif
+  font-size: 16px
+  -webkit-font-smoothing: antialiased
+  height: 100%
   margin: 0
   padding: 0
 
@@ -13,6 +20,41 @@ a
   &:hover
     text-decoration: underline
 
-.release-notes
-  margin: auto
-  width: 80%
+#app
+  height: 100%
+
+  .app
+    align-items: stretch
+    display: flex
+    height: 100%
+    flex-flow: row nowrap
+
+    main
+      display: flex
+      flex-flow: column nowrap
+      flex-grow: 1
+      overflow: scroll
+      padding: 4*grid
+
+      &.empty
+        background: url('../images/pad.svg') no-repeat 50% 50%
+
+button
+  background: primaryColour
+  border: none
+  border-radius: 2px
+  color: white
+  cursor: pointer
+  font-size: 14px
+  font-weight: bolder
+  height: 5*grid
+  padding: 1.5*grid 2*grid
+
+  &[disabled]
+    background: gray
+
+code
+  background: alpha(secondaryColour, 0.2)
+  border-radius: 2px
+  color: darken(secondaryColour, 40%)
+  padding: 1px 3px

@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import Select from './Select';
+
 import { selectPR } from '../redux/reducers/pulls.actions';
 import { selectRepo } from '../redux/reducers/repos.actions';
 import { login } from '../redux/reducers/user.actions';
@@ -47,23 +49,28 @@ class Nav extends React.PureComponent {
           </button>
         </li>
         <li>
-          <select onChange={this.onRepoChange} value={selectedRepo ? selectedRepo.id : ''}>
-            <option disabled>Select a repo</option>
+          <Select
+            onChange={this.onRepoChange}
+            placeholder="Select a repo"
+            value={selectedRepo ? selectedRepo.id : ''}
+          >
             { repositories.map(repo =>
               <option value={repo.id} key={repo.id}>{repo.owner} / {repo.name}</option>
             )}
-          </select>
+          </Select>
         </li>
         <li>
-          <select onChange={this.onPRChange} value={selectedPR ? selectedPR.id : ''}>
-            <option disabled>Select a PR</option>
+          <Select
+            onChange={this.onPRChange}
+            placeholder="Select a PR"
+            value={selectedPR ? selectedPR.id : ''}
+          >
             { pullRequests.map(pr =>
               <option value={pr.number} key={pr.number}>[{pr.number}] {pr.title.substring(0, 50)}</option>
             )}
-          </select>
+          </Select>
         </li>
       </ol>
-      <h1>release notes</h1>
     </nav>;
   }
 }
