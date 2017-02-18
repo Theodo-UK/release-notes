@@ -1,0 +1,26 @@
+@import './vars.styl';
+
+article
+  shadow()
+  background: white
+  margin: 2*scale 0
+  padding: scale
+
+  header
+    border-bottom: 1px dotted gray
+    margin-bottom: scale
+    padding-bottom: scale
+
+    dl
+      display: flex
+      flex-flow: row wrap
+      margin: 0
+
+      dt
+        font-weight: bolder
+        flex-grow: 0
+        width: 5%
+
+      dd
+        flex-grow: 1
+        width: 90%

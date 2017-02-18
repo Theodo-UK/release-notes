@@ -5,6 +5,8 @@ import { selectPR } from '../redux/reducers/pulls.actions';
 import { selectRepo } from '../redux/reducers/repos.actions';
 import { login } from '../redux/reducers/user.actions';
 
+import '../style/Nav.styl';
+
 class Nav extends React.PureComponent {
   constructor(props) {
     super(props);

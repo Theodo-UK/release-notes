@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Help.styl';
+import '../style/Help.styl';
 
 class Help extends React.PureComponent {
   render() {

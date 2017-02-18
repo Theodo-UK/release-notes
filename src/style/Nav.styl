@@ -1,29 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Karla:400,700');
-
-scale = 10px
-
-blue = #3498db
-gray = #95a5a6
-
-shadow()
-  box-shadow: 0 0 scale alpha(black, 0.2)
-
-body
-  background: #ecf0f1
-  font-family: 'Karla', sans-serif
-  margin: 0
-  padding: 0
-
-a
-  color: blue
-  text-decoration: none
-
-  &:hover
-    text-decoration: underline
-
-.release-notes
-  margin: auto
-  width: 80%
+@import './vars.styl';
 
 nav
   align-items: center
@@ -73,36 +48,3 @@ nav
         left: 100%
         position: absolute
         top: 0
-
-article
-  shadow()
-  background: white
-  margin: 2*scale 0
-  padding: scale
-
-  header
-    border-bottom: 1px dotted gray
-    margin-bottom: scale
-    padding-bottom: scale
-
-    dl
-      display: flex
-      flex-flow: row wrap
-      margin: 0
-
-      dt
-        font-weight: bolder
-        flex-grow: 0
-        width: 5%
-
-      dd
-        flex-grow: 1
-        width: 90%
-
-footer
-  color: gray
-  margin: scale 0
-  text-align: center
-
-  a
-    color: inherit

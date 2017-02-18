@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import pkg from '../../package.json';
+import Footer from './Footer';
 import Help from './Help';
 import Mail from './Mail';
 import Nav from './Nav';
 
-import './App.styl';
+import '../style/App.styl';
 
 class App extends React.PureComponent {
   render() {
@@ -14,15 +14,7 @@ class App extends React.PureComponent {
       <Nav/>
       { this.props.showMail && <Mail/> }
       <Help/>
-      <footer>
-        <a
-          href={ pkg.homepage }
-          target="blank"
-          title={`${pkg.name} on GitHub`}
-        >
-          { pkg.name } v{ pkg.version }
-        </a>
-      </footer>
+      <Footer/>
     </main>;
   }
 }
