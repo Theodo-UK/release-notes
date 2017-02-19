@@ -4,6 +4,7 @@ import {
   loadBoardsSuccess,
   loadBoardsFailure,
 } from '../reducers/boards.actions';
+import { loadCards } from '../reducers/cards.actions';
 import trello from '../../services/trello';
 
 export function* loadBoards() {
@@ -21,4 +22,8 @@ export function* loadBoards() {
 
 export function* watchBoards() {
   yield takeEvery(types.LOAD_BOARDS.REQUEST, loadBoards);
+
+  yield takeEvery(types.SELECT_BOARD, function*() {
+    yield put(loadCards());
+  });
 }

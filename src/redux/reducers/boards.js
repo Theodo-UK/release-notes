@@ -22,7 +22,7 @@ export default function boards(state=initialState, action) {
     case types.LOAD_BOARDS.FAILURE:
       return {
         ...state,
-        loading: true,
+        loading: false,
       };
     case types.SELECT_BOARD:
       return {
