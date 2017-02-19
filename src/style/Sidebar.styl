@@ -5,6 +5,7 @@ aside
   display: flex
   flex-flow: column nowrap
   justify-content: space-between
+  min-width: 53*grid
   padding: 4*grid
   width: 53*grid
 
@@ -14,3 +15,8 @@ aside
 
   p
     margin: 0 0 grid
+
+  @media (max-width: responsiveLimit)
+    &
+      min-width: auto
+      width: auto
