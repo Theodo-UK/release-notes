@@ -37432,7 +37432,7 @@ exports = module.exports = __webpack_require__(66)();
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700);", ""]);
 
 // module
-exports.push([module.i, "html {\n  height: 100%;\n}\nbody {\n  background: #f1f1f1;\n  color: #333;\n  font-family: 'Source Sans Pro', sans-serif;\n  font-size: 16px;\n  -webkit-font-smoothing: antialiased;\n  height: 100%;\n  margin: 0;\n  padding: 0;\n}\na {\n  color: #00f;\n  text-decoration: none;\n}\na:hover {\n  text-decoration: underline;\n}\n#app {\n  height: 100%;\n}\n#app .app {\n  align-items: stretch;\n  display: flex;\n  height: 100%;\n  flex-flow: row nowrap;\n}\n#app .app main {\n  display: flex;\n  flex-flow: column nowrap;\n  flex-grow: 1;\n  overflow: scroll;\n  padding: 32px;\n}\n#app .app main.empty {\n  background: url(" + __webpack_require__(693) + ") no-repeat 50% 50%;\n}\nbutton {\n  background: #f1c40f;\n  border: none;\n  border-radius: 2px;\n  color: #fff;\n  cursor: pointer;\n  font-size: 14px;\n  font-weight: bolder;\n  height: 40px;\n  padding: 12px 16px;\n}\nbutton[disabled] {\n  background: #bbb;\n}\ncode {\n  background: rgba(142,68,173,0.2);\n  border-radius: 2px;\n  color: #552968;\n  padding: 1px 3px;\n}\n", ""]);
+exports.push([module.i, "html {\n  height: 100%;\n}\nbody {\n  background: #f1f1f1;\n  color: #333;\n  font-family: 'Source Sans Pro', sans-serif;\n  font-size: 16px;\n  -webkit-font-smoothing: antialiased;\n  height: 100%;\n  margin: 0;\n  padding: 0;\n}\na {\n  color: #00f;\n  text-decoration: none;\n}\na:hover {\n  text-decoration: underline;\n}\n#app {\n  height: 100%;\n}\n#app .app {\n  align-items: stretch;\n  display: flex;\n  height: 100%;\n  flex-flow: row nowrap;\n}\n#app .app main {\n  display: flex;\n  flex-flow: column nowrap;\n  flex-grow: 1;\n  overflow: scroll;\n  padding: 32px;\n}\n#app .app main.empty {\n  background: url(" + __webpack_require__(693) + ") no-repeat 50% 50%;\n}\n@media (max-width: 999px) {\n  #app .app {\n    align-items: stretch;\n    flex-direction: column;\n  }\n}\nbutton {\n  background: #f1c40f;\n  border: none;\n  border-radius: 2px;\n  color: #fff;\n  cursor: pointer;\n  font-size: 14px;\n  font-weight: bolder;\n  height: 40px;\n  padding: 12px 16px;\n}\nbutton[disabled] {\n  background: #bbb;\n}\ncode {\n  background: rgba(142,68,173,0.2);\n  border-radius: 2px;\n  color: #552968;\n  padding: 1px 3px;\n}\n", ""]);
 
 // exports
 
@@ -37502,7 +37502,7 @@ exports = module.exports = __webpack_require__(66)();
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700);", ""]);
 
 // module
-exports.push([module.i, "aside {\n  background: #fff;\n  display: flex;\n  flex-flow: column nowrap;\n  justify-content: space-between;\n  padding: 32px;\n  width: 424px;\n}\naside h1 {\n  font-size: 32px;\n  margin: 0 0 8px;\n}\naside p {\n  margin: 0 0 8px;\n}\n", ""]);
+exports.push([module.i, "aside {\n  background: #fff;\n  display: flex;\n  flex-flow: column nowrap;\n  justify-content: space-between;\n  min-width: 424px;\n  padding: 32px;\n  width: 424px;\n}\naside h1 {\n  font-size: 32px;\n  margin: 0 0 8px;\n}\naside p {\n  margin: 0 0 8px;\n}\n@media (max-width: 999px) {\n  aside {\n    min-width: auto;\n    width: auto;\n  }\n}\n", ""]);
 
 // exports
 
@@ -52575,7 +52575,7 @@ module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGlu
 
 module.exports = {
 	"name": "release-notes",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "Auto-generate release notes",
 	"author": "Nathan Gaberel <nathang@theodo.co.uk>",
 	"homepage": "https://github.com/Theodo-UK/release-notes",
