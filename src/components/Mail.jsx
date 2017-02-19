@@ -5,9 +5,35 @@ import moment from 'moment';
 import '../style/Mail.styl';
 
 class Mail extends React.PureComponent {
+  renderFeatures() {
+    const {
+      cards,
+      commits,
+    } = this.props;
+
+    if (cards.length > 0) {
+      return <ul>
+        { cards.map(card =>
+          <li key={card.id}>
+            { card.type === 'trello' &&
+              <span className="tag">{card.number}</span>
+            }
+            {card.name}
+          </li>
+        )}
+      </ul>;
+    }
+    else {
+      return <ul>
+        { commits.map(commit =>
+          <li key={commit.sha}>{commit.message}</li>
+        )}
+      </ul>;
+    }
+  }
+
   render() {
     const {
-      commits,
       repo,
       user,
     } = this.props;
@@ -30,11 +56,7 @@ class Mail extends React.PureComponent {
 
       <p>We are about to deploy the following features to production:</p>
 
-      <ul>
-        { commits.map(commit =>
-          <li key={commit.sha}>{commit.message}</li>
-        )}
-      </ul>
+      { this.renderFeatures() }
 
       <p>Let me know if this looks right to you, otherwise we'll deploy in a few minutes!</p>
 
@@ -46,12 +68,14 @@ class Mail extends React.PureComponent {
 }
 
 Mail.propTypes = {
+  cards: React.PropTypes.array.isRequired,
   commits: React.PropTypes.array.isRequired,
   repo: React.PropTypes.object.isRequired,
   user: React.PropTypes.string.isRequired,
 };
 
 const mapStateToProps = state => ({
+  cards: state.cards.cards,
   commits: state.commits.commits,
   repo: state.repos.selected,
   user: state.user.name,
