@@ -4,7 +4,7 @@ import {
   loadCardsSuccess,
   loadCardsFailure,
 } from '../reducers/cards.actions';
-import { toCard } from '../../services/commit';
+import { multipleCommitToCards } from '../../services/commit';
 
 export function* loadCards() {
   const [board, commits] = yield [
@@ -13,9 +13,7 @@ export function* loadCards() {
   ];
 
   try {
-    const cards = yield commits.map(
-      commit => call(toCard, board, commit)
-    );
+    const cards = yield call(multipleCommitToCards, board, commits);
     const sorted = cards.sort((a, b) => {
       if (a.type === 'github' && b.type === 'github') return 0;
       if (a.type === 'github') return 1;
