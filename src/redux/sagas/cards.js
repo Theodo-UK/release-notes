@@ -16,7 +16,14 @@ export function* loadCards() {
     const cards = yield commits.map(
       commit => call(toCard, board, commit)
     );
-    yield put(loadCardsSuccess(cards));
+    const sorted = cards.sort((a, b) => {
+      if (a.type === 'github' && b.type === 'github') return 0;
+      if (a.type === 'github') return 1;
+      if (b.type === 'github') return -1;
+
+      return a.number - b.number;
+    });
+    yield put(loadCardsSuccess(sorted));
   }
   catch (error) {
     yield put(loadCardsFailure(error));
