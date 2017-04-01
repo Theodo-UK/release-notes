@@ -5,6 +5,7 @@ import { watchCommits } from './commits';
 import { watchPullRequests } from './pulls';
 import { watchRepos } from './repos';
 import { watchTrello } from './trello';
+import user from './user';
 
 export default function* rootSaga() {
   yield [
@@ -15,5 +16,6 @@ export default function* rootSaga() {
     watchPullRequests(),
     watchRepos(),
     watchTrello(),
+    user(),
   ];
 }
