@@ -9,6 +9,8 @@ export const types = {
     SUCCESS: 'LOGOUT.SUCCESS',
     FAILURE: 'LOGOUT.FAILURE',
   },
+  SET_TOKEN: 'SET_TOKEN',
+  SYNC_USER: 'SYNC_USER',
 }
 
 export const login = () => ({
@@ -36,3 +38,13 @@ export const logoutSuccess = () => ({
 export const logoutFailure = () => ({
   type: types.LOGOUT.FAILURE
 });
+
+export const setToken = token => ({
+  type: types.SET_TOKEN,
+  token,
+});
+
+export const syncUser = user => ({
+  type: types.SYNC_USER,
+  user,
+})
