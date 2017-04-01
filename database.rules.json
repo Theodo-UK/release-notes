@@ -1,0 +1,14 @@
+{
+  "rules": {
+    "users": {
+      "$uid": {
+        ".read": "$uid === auth.uid",
+        ".write": "(data.exists() && $uid === auth.uid) || !data.exists()",
+        ".validate": "newData.hasChildren(['token'])",
+
+        "token": { ".validate": "newData.isString()" },
+        "$other": { ".validate": false }
+      }
+    },
+  }
+}
