@@ -44,6 +44,9 @@ export function singleCommitToCards(board, commit) {
   return Promise.all(ticketNumbers.map(number =>
     trello.getCard(board.id, number)
     .then(feature.fromCard)
+    .catch(() => {})
+  )).then(results => (
+    results.filter(r => r !== undefined)
   ));
 }
 
