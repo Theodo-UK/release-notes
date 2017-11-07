@@ -33616,8 +33616,12 @@ function singleCommitToCards(board, commit) {
   if (ticketNumbers.length == 0) return Promise.resolve([_feature2.default.fromCommit(commit)]);
 
   return Promise.all(ticketNumbers.map(function (number) {
-    return _trello2.default.getCard(board.id, number).then(_feature2.default.fromCard);
-  }));
+    return _trello2.default.getCard(board.id, number).then(_feature2.default.fromCard).catch(function () {});
+  })).then(function (results) {
+    return results.filter(function (r) {
+      return r !== undefined;
+    });
+  });
 }
 
 function multipleCommitToCards(board, commits) {
