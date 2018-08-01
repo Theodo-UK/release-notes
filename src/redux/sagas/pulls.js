@@ -16,6 +16,7 @@ function* loadPullRequests() {
     yield put(loadPullRequestsSuccess(pullRequests.map(pr => ({
       url: pr.url,
       number: pr.number,
+      target: pr.base.ref,
       title: pr.title,
     }))));
   }

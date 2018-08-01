@@ -34,6 +34,7 @@ class Mail extends React.PureComponent {
 
   render() {
     const {
+      pr,
       repo,
       user,
     } = this.props;
@@ -54,7 +55,7 @@ class Mail extends React.PureComponent {
 
       <p>Hello team { repo.name },</p>
 
-      <p>We are about to deploy the following features to production:</p>
+      <p>We are about to deploy the following features to {pr.target}:</p>
 
       { this.renderFeatures() }
 
@@ -70,6 +71,7 @@ class Mail extends React.PureComponent {
 Mail.propTypes = {
   cards: React.PropTypes.array.isRequired,
   commits: React.PropTypes.array.isRequired,
+  pr: React.PropTypes.object.isRequired,
   repo: React.PropTypes.object.isRequired,
   user: React.PropTypes.string.isRequired,
 };
@@ -77,6 +79,7 @@ Mail.propTypes = {
 const mapStateToProps = state => ({
   cards: state.cards.cards,
   commits: state.commits.commits,
+  pr: state.pulls.selected,
   repo: state.repos.selected,
   user: state.user.name,
 });
