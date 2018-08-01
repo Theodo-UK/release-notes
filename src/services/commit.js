@@ -15,10 +15,10 @@ const ticketNumberStrategies = [
     return numbers;
   },
   message => {
-    const matches = message.match(/^feature\/(\d+)/);
+    const matches = message.match(/^Merge pull request.+\/(\d+)-/);
     if (!matches) return null;
 
-    return matches[1];
+    return [parseInt(matches[1])];
   },
 ];
 
