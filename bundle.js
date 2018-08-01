@@ -32035,13 +32035,30 @@ var Sidebar = function (_React$PureComponent) {
           _react2.default.createElement(
             'p',
             null,
-            'To use Trello\'s ticket name, make sure your commit messages are formatted like so: ',
+            'To use Trello\'s ticket name, make sure your commit messages are formatted like so:',
             _react2.default.createElement(
-              'code',
+              'ul',
               null,
-              '(#1234) Title of my PR'
+              _react2.default.createElement(
+                'li',
+                null,
+                _react2.default.createElement(
+                  'code',
+                  null,
+                  'Merge pull request #XXX from YYY/1234-my-feature'
+                )
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                _react2.default.createElement(
+                  'code',
+                  null,
+                  '(#1234) Title of my PR'
+                )
+              )
             ),
-            ', where ',
+            'where ',
             _react2.default.createElement(
               'code',
               null,
@@ -32052,7 +32069,13 @@ var Sidebar = function (_React$PureComponent) {
           _react2.default.createElement(
             'p',
             null,
-            'One way to achieve this is to title your pull requests using this format and squashing them when merging on master.'
+            'One way to achieve this is to make sure your branches are always named ',
+            _react2.default.createElement(
+              'code',
+              null,
+              'feature/1234-my-ticket-name'
+            ),
+            '. \uD83D\uDE09'
           ),
           _react2.default.createElement(_Nav2.default, null)
         ),
@@ -33571,10 +33594,10 @@ var ticketNumberStrategies = [function (message) {
   }
   return numbers;
 }, function (message) {
-  var matches = message.match(/^feature\/(\d+)/);
+  var matches = message.match(/^Merge pull request.+\/(\d+)-/);
   if (!matches) return null;
 
-  return matches[1];
+  return [parseInt(matches[1])];
 }];
 
 function getTicketNumbers(commit) {
@@ -53886,7 +53909,7 @@ module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGlu
 
 module.exports = {
 	"name": "release-notes",
-	"version": "0.2.1",
+	"version": "0.3.0",
 	"description": "Auto-generate release notes",
 	"author": "Nathan Gaberel <nathang@theodo.co.uk>",
 	"homepage": "https://github.com/Theodo-UK/release-notes",
