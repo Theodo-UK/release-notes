@@ -31520,6 +31520,7 @@ var Mail = function (_React$PureComponent) {
     key: 'render',
     value: function render() {
       var _props2 = this.props,
+          pr = _props2.pr,
           repo = _props2.repo,
           user = _props2.user;
 
@@ -31580,7 +31581,9 @@ var Mail = function (_React$PureComponent) {
         _react2.default.createElement(
           'p',
           null,
-          'We are about to deploy the following features to production:'
+          'We are about to deploy the following features to ',
+          pr.target,
+          ':'
         ),
         this.renderFeatures(),
         _react2.default.createElement(
@@ -31608,6 +31611,7 @@ var Mail = function (_React$PureComponent) {
 Mail.propTypes = {
   cards: _react2.default.PropTypes.array.isRequired,
   commits: _react2.default.PropTypes.array.isRequired,
+  pr: _react2.default.PropTypes.object.isRequired,
   repo: _react2.default.PropTypes.object.isRequired,
   user: _react2.default.PropTypes.string.isRequired
 };
@@ -31616,6 +31620,7 @@ var mapStateToProps = function mapStateToProps(state) {
   return {
     cards: state.cards.cards,
     commits: state.commits.commits,
+    pr: state.pulls.selected,
     repo: state.repos.selected,
     user: state.user.name
   };
@@ -33066,6 +33071,7 @@ function loadPullRequests() {
             return {
               url: pr.url,
               number: pr.number,
+              target: pr.base.ref,
               title: pr.title
             };
           })));
@@ -53909,7 +53915,7 @@ module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGlu
 
 module.exports = {
 	"name": "release-notes",
-	"version": "0.3.0",
+	"version": "0.3.1",
 	"description": "Auto-generate release notes",
 	"author": "Nathan Gaberel <nathang@theodo.co.uk>",
 	"homepage": "https://github.com/Theodo-UK/release-notes",
